@@ -1,0 +1,5 @@
+guestbook:
+  build: guestbook-go/Dockerfile
+  image: guestbook
+  pre:
+   - docker run --rm -v $(pwd)/guestbook-go:/go/src/myapp -it -w /go/src/myapp golang:1.5.2 make

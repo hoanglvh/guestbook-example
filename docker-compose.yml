@@ -1,0 +1,13 @@
+guestbook:
+  image: guestbook
+  ports:
+    - 3000:3000
+  links:
+    - redis-master:redis-master
+    - redis-slave:redis-slave
+redis-master:
+  image: redis
+redis-slave:
+  image: kubernetes/redis-slave:v2
+  links:
+    - redis-master:redis-master
