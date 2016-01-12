@@ -17,4 +17,10 @@ docker run --rm -v $(pwd)/guestbook-go:/go/src/myapp -it -w /go/src/myapp golang
 docker build -t guestbook guestbook-go
 ```
 
+# Run
 
+```
+docker-compose up -d
+```
+
+open http://DOCKER_HOST_IP:3000/
