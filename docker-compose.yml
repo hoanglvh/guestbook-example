@@ -3,11 +3,15 @@ guestbook:
   ports:
     - 3000:3000
   links:
-    - redis-master:redis-master
-    - redis-slave:redis-slave
-redis-master:
+    - redismaster:redis-master
+    - redisslave:redis-slave
+redismaster:
   image: redis
-redis-slave:
+  ports:
+    - 3001:6379
+redisslave:
   image: kubernetes/redis-slave:v2
   links:
-    - redis-master:redis-master
+    - redismaster:redis-master
+  ports:
+    - 3002:6379
