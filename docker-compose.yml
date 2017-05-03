@@ -6,7 +6,7 @@ guestbook:
     - redismaster:redis-master
     - redisslave:redis-slave
 redismaster:
-  image: redis
+  image: redis:2.8.19
   ports:
     - 3001:6379
 redisslave:
