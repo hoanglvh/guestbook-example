@@ -6,11 +6,11 @@ guestbook:
     - redismaster:redis-master
     - redisslave:redis-slave
 redismaster:
-  image: redis:2.8.19
+  image: redis:3.0.7-alpine
   ports:
-    - 3001:6379
+    - 6379:6379
 redisslave:
-  image: kubernetes/redis-slave:v2
+  image: gcr.io/google_samples/gb-redisslave:v1
   links:
     - redismaster:redis-master
   ports:

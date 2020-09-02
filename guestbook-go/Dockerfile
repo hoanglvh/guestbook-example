@@ -1,4 +1,4 @@
-FROM busybox:ubuntu-14.04
+FROM busybox:ubuntu
 
 ADD ./guestbook /app/guestbook
 ADD ./public/ /app/public/
