@@ -13,7 +13,7 @@ captain build
 or docker itself:
 
 ```
-docker run --rm -v $(pwd)/guestbook-go:/go/src/myapp -it -w /go/src/myapp golang:1.5.2 make
+docker run --rm -v $(pwd)/guestbook-go:/go/src/myapp -it -w /go/src/myapp golang:latest make
 docker build -t guestbook guestbook-go
 ```
 
