@@ -3,15 +3,15 @@ guestbook:
   ports:
     - 3000:3000
   links:
-    - redismaster:redis-master
-    - redisslave:redis-slave
-redismaster:
+    - redis-master:redis-master
+    - redis-slave:redis-slave
+redis-master:
   image: redis:3.0.7-alpine
   ports:
     - 6379:6379
-redisslave:
+redis-slave:
   image: gcr.io/google_samples/gb-redisslave:v1
   links:
-    - redismaster:redis-master
+    - redis-master:redis-master
   ports:
     - 3002:6379
